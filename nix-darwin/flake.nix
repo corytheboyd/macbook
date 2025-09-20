@@ -19,6 +19,13 @@
         {
           system.primaryUser = "corytheboyd";
 
+          # Configure user with zsh as default shell
+          users.users.corytheboyd = {
+            name = "corytheboyd";
+            home = "/Users/corytheboyd";
+            shell = pkgs.zsh;
+          };
+
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = with pkgs; [
@@ -35,6 +42,12 @@
             jq
             lazygit
             uv
+            iterm2
+          ];
+
+          fonts.packages = with pkgs; [
+            nerd-fonts.fira-code
+            nerd-fonts.jetbrains-mono
           ];
 
           # Necessary for using flakes on this system.
@@ -51,6 +64,12 @@
             enableFzfGit = true;
             enableFzfHistory = true;
 
+            # Ensure zsh is the default shell
+            enableBashCompletion = true;
+
+            # Disable default prompt (we use starship)
+            promptInit = "";
+
             variables = builtins.fromTOML (builtins.readFile ./config/zsh/environment.toml);
 
             interactiveShellInit = ''
@@ -63,13 +82,7 @@
                 )
               )}
 
-              # Setup oh-my-zsh without theme (starship handles prompt)
-              export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-              ZSH_THEME=""
-              plugins=(git)
-              source $ZSH/oh-my-zsh.sh
-
-              # Initialize starship
+              # Starship prompt
               eval "$(starship init zsh)"
 
               # Load custom zsh config from this repo
@@ -84,6 +97,15 @@
               "iterm2"
             ];
           };
+
+          # Configure system defaults including iTerm2
+          system.defaults = {
+            # Set system font defaults
+            NSGlobalDomain = {
+              AppleFontSmoothing = 1;
+            };
+          };
+
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
