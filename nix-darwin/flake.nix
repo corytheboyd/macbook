@@ -5,6 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -12,6 +14,7 @@
       self,
       nix-darwin,
       nixpkgs,
+      home-manager,
     }:
     let
       configuration =
@@ -26,27 +29,13 @@
             shell = pkgs.zsh;
           };
 
-          # List packages installed in system profile. To search by name, run:
-          # $ nix-env -qaP | grep wget
+          # System packages (essential commands that need to be system-wide)
           environment.systemPackages = with pkgs; [
-            vim
-            mise
-            fzf
-            git
-            oh-my-zsh
-            starship
-            colima
-            ffmpeg
-            htop
-            jless
-            jq
-            lazygit
-            uv
-            iterm2
+            coreutils  # mv, mkdir, etc.
+            starship   # needed for prompt init
           ];
 
           fonts.packages = with pkgs; [
-            nerd-fonts.fira-code
             nerd-fonts.jetbrains-mono
           ];
 
@@ -56,18 +45,13 @@
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
 
-          # Configure zsh
+          # Configure zsh (moved back from Home Manager for PATH compatibility)
           programs.zsh = {
             enable = true;
             enableCompletion = true;
             enableFzfCompletion = true;
             enableFzfGit = true;
             enableFzfHistory = true;
-
-            # Ensure zsh is the default shell
-            enableBashCompletion = true;
-
-            # Disable default prompt (we use starship)
             promptInit = "";
 
             variables = builtins.fromTOML (builtins.readFile ./config/zsh/environment.toml);
@@ -84,6 +68,9 @@
 
               # Starship prompt
               eval "$(starship init zsh)"
+
+              # Initialize completions first
+              autoload -U compinit && compinit
 
               # Load custom zsh config from this repo
               source ${./config/zsh/init.zsh}
@@ -124,7 +111,16 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#corytheboyd
       darwinConfigurations."corytheboyd" = nix-darwin.lib.darwinSystem {
-        modules = [ configuration ];
+        modules = [
+          configuration
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.corytheboyd = import ./home.nix;
+          }
+        ];
       };
     };
 }
