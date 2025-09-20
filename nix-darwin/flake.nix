@@ -17,10 +17,24 @@
       configuration =
         { pkgs, ... }:
         {
+          system.primaryUser = "corytheboyd";
+
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
-          environment.systemPackages = [
-            pkgs.vim
+          environment.systemPackages = with pkgs; [
+            vim
+            mise
+            fzf
+            git
+            oh-my-zsh
+            starship
+            colima
+            ffmpeg
+            htop
+            jless
+            jq
+            lazygit
+            uv
           ];
 
           # Necessary for using flakes on this system.
@@ -28,6 +42,48 @@
 
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
+
+          # Configure zsh
+          programs.zsh = {
+            enable = true;
+            enableCompletion = true;
+            enableFzfCompletion = true;
+            enableFzfGit = true;
+            enableFzfHistory = true;
+
+            variables = builtins.fromTOML (builtins.readFile ./config/zsh/environment.toml);
+
+            interactiveShellInit = ''
+              # Load aliases
+              ${builtins.concatStringsSep "\n" (
+                builtins.attrValues (
+                  builtins.mapAttrs (name: value: "alias ${name}='${value}'") (
+                    builtins.fromTOML (builtins.readFile ./config/zsh/aliases.toml)
+                  )
+                )
+              )}
+
+              # Setup oh-my-zsh without theme (starship handles prompt)
+              export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
+              ZSH_THEME=""
+              plugins=(git)
+              source $ZSH/oh-my-zsh.sh
+
+              # Initialize starship
+              eval "$(starship init zsh)"
+
+              # Load custom zsh config from this repo
+              source ${./config/zsh/init.zsh}
+            '';
+          };
+
+          # Configure Homebrew for GUI apps
+          homebrew = {
+            enable = true;
+            casks = [
+              "iterm2"
+            ];
+          };
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
