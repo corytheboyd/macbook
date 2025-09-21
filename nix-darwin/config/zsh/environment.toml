@@ -1,5 +1,0 @@
-EDITOR = "vim"
-BUN_INSTALL = "$HOME/.bun"
-HAXE_STD_PATH = "/opt/homebrew/lib/haxe/std"
-SSH_AUTH_SOCK = "$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
-PATH = "$BUN_INSTALL/bin:/Users/corytheboyd/.dotnet/tools:/Users/corytheboyd/.lmstudio/bin:$PATH"
