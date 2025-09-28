@@ -19,8 +19,10 @@
   # environment.
   home.packages = with pkgs; [
     alacritty
-    direnvvim
-    nixfmt-rfc-style
+    alacritty-theme
+    # TODO: figure out permission of non-free packages
+    # jetbrains-toolbox
+    lazygit
     starship
     vscodium
   ];
