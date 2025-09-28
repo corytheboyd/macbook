@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules
+    # ./home-manager-modules
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -18,8 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    iterm2
+    kitty
     starship
+    vscodium
   ];
 
   # Home Manager can also manage your environment variables through
