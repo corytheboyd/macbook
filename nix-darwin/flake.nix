@@ -44,22 +44,32 @@
 
           # Enable home-manager
           users.users.corytheboyd.home = "/Users/corytheboyd";
+
+          # Determinate uses its own daemon to manage the Nix installation that
+          # conflicts with nix-darwin’s native Nix management.
+          #
+          # To turn off nix-darwin’s management of the Nix installation, set:
+          #
+          #     nix.enable = false;
+          #
+          # This will allow you to use nix-darwin with Determinate. Some nix-darwin
+          # functionality that relies on managing the Nix installation, like the
+          # `nix.*` options to adjust Nix settings or configure a Linux builder,
+          # will be unavailable.
+          nix.enable = false;
         };
     in
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#simple
-      darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."cory-mbp-2023" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.corytheboyd = { pkgs, ... }: {
-              # Home Manager configuration goes here
-              home.stateVersion = "25.05";
-            };
+            home-manager.users.corytheboyd = import ./home.nix;
           }
         ];
       };
