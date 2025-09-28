@@ -18,7 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Add your packages here
+    iterm2
   ];
 
   # Home Manager can also manage your environment variables through
