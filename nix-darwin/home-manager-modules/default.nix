@@ -1,8 +1,9 @@
 {
   imports = [
     ./alacritty.nix
+    ./direnv.nix
     ./git.nix
-    ./zsh.nix
     ./starship.nix
+    ./zsh.nix
   ];
 }

@@ -18,7 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    kitty
+    alacritty
+    direnvvim
+    nixfmt-rfc-style
     starship
     vscodium
   ];
@@ -26,7 +28,7 @@
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
