@@ -2,7 +2,7 @@
 
 {
   imports = [
-    # ./home-manager-modules
+    ./home-manager-modules
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
