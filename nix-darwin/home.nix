@@ -19,6 +19,7 @@
   # environment.
   home.packages = with pkgs; [
     iterm2
+    starship
   ];
 
   # Home Manager can also manage your environment variables through
