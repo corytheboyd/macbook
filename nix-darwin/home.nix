@@ -22,6 +22,8 @@
     alacritty-theme
     # TODO: figure out permission of non-free packages
     # jetbrains-toolbox
+    fontconfig
+    nerd-fonts.fira-code
     lazygit
     starship
     vscodium
@@ -35,4 +37,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Enable font installation
+  fonts.fontconfig.enable = true;
 }

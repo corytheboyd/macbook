@@ -7,7 +7,7 @@
         "${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night.toml"
       ];
       font = {
-        normal.family = "JetBrains Mono";
+        normal.family = "FiraCode Nerd Font Mono";
         size = 14;
       };
       window = {
