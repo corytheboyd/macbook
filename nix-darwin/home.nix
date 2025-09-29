@@ -24,6 +24,7 @@
     # jetbrains-toolbox
     fontconfig
     nerd-fonts.fira-code
+    fzf
     lazygit
     starship
     vscodium

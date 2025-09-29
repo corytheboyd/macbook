@@ -3,9 +3,12 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [
-        "${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night.toml"
-      ];
+      general = {
+        import = [
+          "${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night.toml"
+          "./static/alacritty/keybindings.toml"
+        ];
+      };
 
       font = {
         normal.family = "FiraCode Nerd Font Mono";
@@ -13,7 +16,8 @@
       };
 
       window = {
-        opacity = 0.95;
+        startup_mode = "Maximized";
+        opacity = 0.75;
         blur = true;
         padding = {
           x = 10;
