@@ -22,11 +22,17 @@
     alacritty-theme
     # TODO: figure out permission of non-free packages
     # jetbrains-toolbox
+    fd
     fontconfig
-    nerd-fonts.fira-code
     fzf
+    jq
+    jless
+    neovim
+    nerd-fonts.fira-code
     lazygit
+    ripgrep
     starship
+    tree-sitter
     vscodium
   ];
 
