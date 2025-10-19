@@ -9,6 +9,7 @@
     taps = [ ];
     brews = [ ];
     casks = [
+      "hammerspoon"
       "jetbrains-toolbox"
       "sol"
     ];
