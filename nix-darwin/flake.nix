@@ -1,6 +1,4 @@
 {
-  description = "Example nix-darwin system flake";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
@@ -22,6 +20,7 @@
       darwinConfigurations."cory-mbp-2023" = nix-darwin.lib.darwinSystem {
         modules = [
           (import ./configuration.nix { inherit self; })
+          ./homebrew.nix
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

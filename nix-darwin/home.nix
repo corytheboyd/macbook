@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -18,10 +23,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    alacritty
-    alacritty-theme
-    # TODO: figure out permission of non-free packages
-    # jetbrains-toolbox
     fd
     fontconfig
     fzf
@@ -42,7 +43,7 @@
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'.
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -50,13 +51,4 @@
 
   # Enable font installation
   fonts.fontconfig.enable = true;
-
-  # Rectangle start at login
-  launchd.agents.rectangle = {
-    enable = true;
-    config = {
-      ProgramArguments = [ "${pkgs.rectangle}/Applications/Rectangle.app/Contents/MacOS/Rectangle" ];
-      RunAtLoad = true;
-    };
-  };
 }

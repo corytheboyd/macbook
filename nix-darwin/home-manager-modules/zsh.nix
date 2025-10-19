@@ -9,6 +9,9 @@
     };
 
     initContent = ''
+      # Homebrew
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+
       # https://junegunn.github.io/fzf/shell-integration
       source <(fzf --zsh)
 
