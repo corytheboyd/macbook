@@ -27,6 +27,7 @@
     fzf
     jq
     jless
+    just
     neovim
     nerd-fonts.fira-code
     lazygit
@@ -34,6 +35,7 @@
     starship
     tree-sitter
     vscodium
+    wezterm
   ];
 
   # Home Manager can also manage your environment variables through

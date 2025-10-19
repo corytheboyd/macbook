@@ -1,9 +1,0 @@
-[[keyboard.bindings]]
-key = "Left"
-mods = "Command"
-action = "SelectPreviousTab"
-
-[[keyboard.bindings]]
-key = "Right"
-mods = "Command"
-action = "SelectNextTab"
