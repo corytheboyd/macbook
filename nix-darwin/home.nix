@@ -33,6 +33,7 @@
     just
     neovim
     nerd-fonts.fira-code
+    nixfmt-rfc-style
     lazygit
     rectangle
     ripgrep
