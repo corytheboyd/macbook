@@ -3,7 +3,8 @@
     ./direnv.nix
     ./git.nix
     ./starship.nix
-    ./zsh.nix
+    ./vscodium.nix
     ./wezterm.nix
+    ./zsh.nix
   ];
 }
