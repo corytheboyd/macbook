@@ -11,13 +11,14 @@ config.font_size = 14.0
 config.color_scheme = 'Gruvbox Dark (Gogh)'
 
 config.keys = {
+  -- Clear screen
+  { key = 'k',          mods = 'CMD',       action = act.ClearScrollback 'ScrollbackAndViewport' },
+
   -- Split panes
   { key = 'd',          mods = 'CMD',       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
   { key = 'd',          mods = 'CMD|SHIFT', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
 
-  -- Navigate panes
-  { key = '[',          mods = 'CMD',       action = act.ActivatePaneDirection 'Prev' },
-  { key = ']',          mods = 'CMD',       action = act.ActivatePaneDirection 'Next' },
+  -- Navigate split panes
   { key = 'LeftArrow',  mods = 'CMD|OPT',   action = act.ActivatePaneDirection 'Left' },
   { key = 'RightArrow', mods = 'CMD|OPT',   action = act.ActivatePaneDirection 'Right' },
   { key = 'UpArrow',    mods = 'CMD|OPT',   action = act.ActivatePaneDirection 'Up' },
@@ -27,6 +28,14 @@ config.keys = {
   { key = 't',          mods = 'CMD',       action = act.SpawnTab 'CurrentPaneDomain' },
   { key = 'n',          mods = 'CMD',       action = act.SpawnWindow },
   { key = 'w',          mods = 'CMD',       action = act.CloseCurrentPane { confirm = true } },
+
+  -- Change tabs
+  { key = 'LeftArrow',  mods = 'CMD',       action = act.ActivateTabRelative(-1) },
+  { key = 'RightArrow', mods = 'CMD',       action = act.ActivateTabRelative(1) },
+
+  -- Move tabs
+  { key = 'LeftArrow',  mods = 'CMD|SHIFT', action = act.MoveTabRelative(-1) },
+  { key = 'RightArrow', mods = 'CMD|SHIFT', action = act.MoveTabRelative(1) },
 }
 
 return config
