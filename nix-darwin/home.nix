@@ -31,6 +31,7 @@
     neovim
     nerd-fonts.fira-code
     lazygit
+    rectangle
     ripgrep
     starship
     tree-sitter
@@ -49,4 +50,13 @@
 
   # Enable font installation
   fonts.fontconfig.enable = true;
+
+  # Rectangle start at login
+  launchd.agents.rectangle = {
+    enable = true;
+    config = {
+      ProgramArguments = [ "${pkgs.rectangle}/Applications/Rectangle.app/Contents/MacOS/Rectangle" ];
+      RunAtLoad = true;
+    };
+  };
 }
