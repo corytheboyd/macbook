@@ -9,9 +9,16 @@
     taps = [ ];
     brews = [ ];
     casks = [
-      "hammerspoon"
+      "claude"
+      "claude-code"
       "jetbrains-toolbox"
+      "monodraw"
+      "mullvad-vpn"
+      "obsidian"
+      "shottr"
+      "signal"
       "sol"
+      "vlc"
     ];
   };
 }

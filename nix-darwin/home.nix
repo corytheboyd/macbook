@@ -23,6 +23,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    audacity
+    bitwarden-desktop
     fd
     fontconfig
     fzf
@@ -35,6 +37,7 @@
     rectangle
     ripgrep
     starship
+    tailscale
     tree-sitter
     vscodium
     wezterm
