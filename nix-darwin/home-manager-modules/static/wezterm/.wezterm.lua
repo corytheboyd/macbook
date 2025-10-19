@@ -3,8 +3,9 @@ local act = wezterm.action
 
 local config = wezterm.config_builder()
 
-config.initial_cols = 120
-config.initial_rows = 28
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
+config.native_macos_fullscreen_mode = true
 
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 14.0
