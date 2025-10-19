@@ -24,6 +24,7 @@
   # environment.
   home.packages = with pkgs; [
     audacity
+    bitwarden-cli
     bitwarden-desktop
     fd
     fontconfig
