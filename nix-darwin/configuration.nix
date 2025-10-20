@@ -18,13 +18,10 @@
   # Enable Touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  # Disable macOS keyboard shortcuts that conflict with IntelliJ/development tools
+  # Override system properties
   system.defaults.CustomUserPreferences = {
     "NSGlobalDomain" = {
-      # Disable Cmd+Shift+A (conflicts with IntelliJ "Find Action")
-      NSUserKeyEquivalents = {
-        "Show Help menu" = "@~^$\\U0000"; # Unbind Cmd+Shift+A
-      };
+      # TODO figure this out...
     };
   };
 
