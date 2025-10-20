@@ -6,6 +6,19 @@ local config = wezterm.config_builder()
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 config.native_macos_fullscreen_mode = true
+config.window_decorations = "TITLE | RESIZE"
+
+-- Add window border for better visibility when windows stack
+config.window_frame = {
+  border_left_width = '0.5cell',
+  border_right_width = '0.5cell',
+  border_bottom_height = '0.25cell',
+  border_top_height = '0.25cell',
+  border_left_color = '#444444',
+  border_right_color = '#444444',
+  border_bottom_color = '#444444',
+  border_top_color = '#444444',
+}
 
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 14.0
