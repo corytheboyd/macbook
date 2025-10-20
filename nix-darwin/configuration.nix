@@ -18,6 +18,16 @@
   # Enable Touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  # Disable macOS keyboard shortcuts that conflict with IntelliJ/development tools
+  system.defaults.CustomUserPreferences = {
+    "NSGlobalDomain" = {
+      # Disable Cmd+Shift+A (conflicts with IntelliJ "Find Action")
+      NSUserKeyEquivalents = {
+        "Show Help menu" = "@~^$\\U0000"; # Unbind Cmd+Shift+A
+      };
+    };
+  };
+
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
