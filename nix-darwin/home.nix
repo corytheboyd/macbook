@@ -43,6 +43,7 @@
     tree-sitter
     vscodium
     wezterm
+    xz
   ];
 
   # Home Manager can also manage your environment variables through
