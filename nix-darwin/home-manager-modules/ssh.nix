@@ -28,7 +28,7 @@
       };
       "arcade" = {
         user = "arcade";
-        hostname = "arcade.local";
+        hostname = "arcade.taild3766c.ts.net";
       };
     };
   };
