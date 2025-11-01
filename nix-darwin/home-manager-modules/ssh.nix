@@ -26,6 +26,10 @@
         user = "pliskin";
         hostname = "motherbase.taild3766c.ts.net";
       };
+      "arcade" = {
+        user = "arcade";
+        hostname = "arcade.local";
+      };
     };
   };
 
