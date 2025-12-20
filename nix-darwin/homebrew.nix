@@ -19,6 +19,7 @@
       "signal"
       "sol"
       "vlc"
+      "ungoogled-chromium"
     ];
   };
 }
