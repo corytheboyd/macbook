@@ -18,8 +18,8 @@
       "shottr"
       "signal"
       "sol"
-      "vlc"
       "ungoogled-chromium"
+      "vlc"
     ];
   };
 }
