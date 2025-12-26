@@ -1,7 +1,7 @@
 {
   imports = [
-    ./chromium.nix
     ./direnv.nix
+    ./firefox.nix
     ./git.nix
     ./ssh.nix
     ./starship.nix

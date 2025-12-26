@@ -25,7 +25,6 @@
       "shottr"
       "signal"
       "sol"
-      "ungoogled-chromium"
       "vlc"
     ];
   };
