@@ -1,13 +1,16 @@
+# See:
+# https://nix-darwin.github.io/nix-darwin/manual/index.html#opt-homebrew.enable
+
 { config, pkgs, ... }:
 {
   homebrew = {
     enable = true;
     onActivation = {
       autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
     taps = [
-      "domt4/autoupdate"
     ];
     brews = [
       "duckdb"
