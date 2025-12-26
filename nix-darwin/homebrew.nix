@@ -1,6 +1,5 @@
 # See:
 # https://nix-darwin.github.io/nix-darwin/manual/index.html#opt-homebrew.enable
-
 { config, pkgs, ... }:
 {
   homebrew = {

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./chromium.nix
     ./direnv.nix
     ./git.nix
     ./ssh.nix
