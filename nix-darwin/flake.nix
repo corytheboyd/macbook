@@ -5,7 +5,6 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = "github:nix-community/NUR";
   };
 
   outputs =
@@ -14,7 +13,6 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      nur,
     }:
     {
       # Build darwin flake using:
@@ -28,7 +26,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.corytheboyd = import ./home.nix;
-            nixpkgs.overlays = [ nur.overlays.default ];
           }
         ];
       };

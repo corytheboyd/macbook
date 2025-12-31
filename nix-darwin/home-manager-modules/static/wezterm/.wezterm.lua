@@ -41,7 +41,7 @@ config.keys = {
   -- New tab/window
   { key = 't',          mods = 'CMD',       action = act.SpawnTab 'CurrentPaneDomain' },
   { key = 'n',          mods = 'CMD',       action = act.SpawnWindow },
-  { key = 'w',          mods = 'CMD',       action = act.CloseCurrentPane { confirm = true } },
+  { key = 'w',          mods = 'CMD',       action = act.CloseCurrentPane { confirm = false } },
 
   -- Change tabs
   { key = 'LeftArrow',  mods = 'CMD',       action = act.ActivateTabRelative(-1) },

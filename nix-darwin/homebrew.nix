@@ -9,8 +9,7 @@
       upgrade = true;
       cleanup = "zap";
     };
-    taps = [
-    ];
+    taps = [ ];
     brews = [
       "duckdb"
       "opencode"
@@ -18,6 +17,7 @@
     casks = [
       "claude"
       "claude-code"
+      "firefox"
       "jetbrains-toolbox"
       "monodraw"
       "mullvad-vpn"
