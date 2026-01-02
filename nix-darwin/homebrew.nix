@@ -26,6 +26,7 @@
       "signal"
       "sol"
       "vlc"
+      "yaak"
     ];
   };
 
