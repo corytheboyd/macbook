@@ -15,6 +15,7 @@
       "opencode"
     ];
     casks = [
+      "base"
       "claude"
       "claude-code"
       "firefox"
