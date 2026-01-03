@@ -20,6 +20,9 @@
         --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
         --color header:italic
         --header 'Press CTRL-Y to copy command into clipboard'"
+
+      # https://just.systems/man/en/shell-completion-scripts.html?highlight=zsh#shell-completion-scripts
+      just --completions zsh > just.zsh
     '';
   };
 }
