@@ -1,5 +1,6 @@
 {
   imports = [
+    ./colima.nix
     ./direnv.nix
     ./git.nix
     ./ssh.nix

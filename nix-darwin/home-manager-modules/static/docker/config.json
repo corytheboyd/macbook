@@ -1,0 +1,12 @@
+{
+  "credsStore": "osxkeychain",
+  "currentContext": "colima",
+  "cliPluginsExtraDirs": [
+    "/etc/profiles/per-user/corytheboyd/bin"
+  ],
+  "plugins": {
+    "-x-cli-hints": {
+      "enabled": "true"
+    }
+  }
+}

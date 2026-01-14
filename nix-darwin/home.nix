@@ -26,6 +26,10 @@
     audacity
     bitwarden-cli
     bitwarden-desktop
+    colima
+    docker
+    docker-compose
+    docker-credential-helpers
     fd
     fontconfig
     fzf
