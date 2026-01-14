@@ -13,6 +13,7 @@
     brews = [
       "duckdb"
       "opencode"
+      "ufbt"
     ];
     casks = [
       "base"
