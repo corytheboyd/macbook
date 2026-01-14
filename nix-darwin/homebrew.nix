@@ -24,6 +24,7 @@
       "monodraw"
       "mullvad-vpn"
       "obsidian"
+      "qflipper"
       "shottr"
       "signal"
       "sol"
