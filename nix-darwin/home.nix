@@ -33,6 +33,7 @@
     fd
     fontconfig
     fzf
+    ghostty-bin
     jq
     jless
     just
@@ -46,7 +47,6 @@
     tailscale
     tree-sitter
     vscodium
-    wezterm
     xz
   ];
 

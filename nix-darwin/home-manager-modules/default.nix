@@ -6,7 +6,7 @@
     ./ssh.nix
     ./starship.nix
     ./vscodium.nix
-    ./wezterm.nix
+    ./ghostty.nix
     ./zsh.nix
   ];
 }
