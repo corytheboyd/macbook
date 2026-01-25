@@ -16,6 +16,7 @@
       "ufbt"
     ];
     casks = [
+      "alfred"
       "base"
       "claude"
       "claude-code"
@@ -27,7 +28,6 @@
       "qflipper"
       "shottr"
       "signal"
-      "sol"
       "ungoogled-chromium"
       "vlc"
       "yaak"
