@@ -4,6 +4,10 @@ font-size = 14
 background-opacity = 0.9
 background-blur = true
 
+confirm-close-surface = false
+
+copy-on-select = clipboard
+
 theme = Gruvbox Dark
 
 # Clear screen
